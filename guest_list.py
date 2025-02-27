@@ -14,7 +14,7 @@ def add_guest(guest: str) -> list:
 def replace_guest(guest: str) -> list:
     """remove a guest and their greeting message, then ask for a new guest. The new guest and their message will be added to their respective lists."""
     invitee_list.remove(guest)
-    message_list.remove(person for person in message_list if (guest) in person)
+    message_list.remove(person for person in message_list if guest in person)
     new_guest = input("Who is the new guest you would like to invite? ").strip().title()
     invitee_list.append(new_guest)
     guests_message = (f"{new_guest}! You are invited to Joshua's dinner party. Please RSVP with your availability and a dish you would like to be served. ")
@@ -55,4 +55,3 @@ while True:
     except ValueError:
         # Error message for non-number input.
         print("Invalid input. Please pick from 1-5 for: [1] Add a person to the list & make them an invitation, [2] Remove a person from the list, [3] Print Ivitation messages, [4] Print out the number of guests invited, [5] Exit the program. ")
-
