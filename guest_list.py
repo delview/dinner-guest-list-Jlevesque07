@@ -37,7 +37,9 @@ while True:
             exit()
         
         else:
+            # Error message for number outside of range 1-5.
             print("Invalid number. Please pick from 1-5 for: [1] Add a person to the list & make them an invitation, [2] Remove a person from the list, [3] Print Ivitation messages, [4] Print out the number of guests invited, [5] Exit the program. ")
     except ValueError:
+        # Error message for non-number input.
         print("Invalid input. Please pick from 1-5 for: [1] Add a person to the list & make them an invitation, [2] Remove a person from the list, [3] Print Ivitation messages, [4] Print out the number of guests invited, [5] Exit the program. ")
 
