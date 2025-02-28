@@ -3,15 +3,20 @@
 
 
 #Function to add a person to the guest list until variable for number of people who are going to be invited is zero
-def add(num_guests: int) -> list:
+def add() -> list:
     """Adds a person to the guest list until variable for number of people who are going to be invited is zero. """
+    while True:
+        try:
+            num_guests = int(input("How many guests do you want to invite? "))
+            if num_guests > 0:
+                break
 
 # Function to remove a person from the guest list and replace them with a new guest.
 def rar(guest: str) -> list:
     """Removes a person from the guest list and replaces them with a new guest. """
 
 
-
+guest_list = []
 while True:
     option = input("Would you like to: Add people to the list? [1], Replace someone in the list? [2], Print out a list of the invitations that will be sent out? [3], Exit the program? [4]")
     
@@ -27,4 +32,3 @@ while True:
     elif int(option == 4):
         # Exit the program.
 
-    
