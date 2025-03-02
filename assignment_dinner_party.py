@@ -10,6 +10,12 @@ def add() -> list:
             num_guests = int(input("How many guests do you want to invite? "))
             if num_guests > 0:
                 break
+            elif num_guests == 0:
+                return guest_list
+            else:
+                print("Please pick a positive number, or zero for no guests. ")
+        except ValueError:
+            print("Please input a number. ")
 
 # Function to remove a person from the guest list and replace them with a new guest.
 def rar(guest: str) -> list:
