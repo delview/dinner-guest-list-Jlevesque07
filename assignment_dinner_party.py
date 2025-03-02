@@ -25,6 +25,7 @@ def add() -> list:
     while num_guests > 0:
         new_guest = input("Who is the guest you would like to add? ").strip().title()
         guest_list.append(new_guest)
+        print(f"{new_guest} added to the guest list. ")
         num_guests = num_guests - 1
     
     print(f"Your new guest list includes: {guest_list}.")
@@ -35,8 +36,10 @@ def add() -> list:
 def rar(guest: str) -> list:
     """Removes a person from the guest list and replaces them with a new guest. """
     guest_list.remove(guest)
+    print(f"{guest} removed from the guest list. ")
     new_guest = input("Who would you like to add to the guest list? ").strip().title()
     guest_list.append(new_guest)
+    print(f"{new_guest} added to the guest list. ")
     print(f"Your new guest list includes: {guest_list}.")
     return guest_list
 
@@ -45,7 +48,7 @@ def rar(guest: str) -> list:
 guest_list = []
 while True:
     # Different option values (1-4) call different functions.
-    option = input("Would you like to: Add people to the list? [1], Replace someone in the list? [2], Print out a list of the invitations that will be sent out? [3], Exit the program? [4]").strip()
+    option = input("Would you like to: Add people to the list? [1], Replace someone in the list? [2], Print out a list of the invitations that will be sent out? [3], Exit the program? [4] ").strip()
     
     if option == "1": 
         add()
@@ -60,22 +63,22 @@ while True:
                 remove = 0
             else:
                 while True:
-                    choice = input("Whoops! It seems this guest isn't in the list. Would you like again? [1], or go back to the menu? [2]").strip()
+                    choice = input("Whoops! It seems this guest isn't in the list. Would you like to try again? [1], or go back to the menu? [2] ").strip()
                     if choice == "1":
-                        pass
+                        break
                     elif choice == "2":
                         remove = 0
                         break
                     else:
                         print("Please choose 1 or 2. ")
 
-    elif int(option) == 3:
+    elif option == "3":
         # Print out invitations for each dinner guest. 
         print("Your guest invitations: ")
         for guest in guest_list:
             print(f"{guest}! you are invited to Joshua's dinner party. ")
 
-    elif int(option == 4):
+    elif option == "4":
         # Exit the program.
         exit()
     
