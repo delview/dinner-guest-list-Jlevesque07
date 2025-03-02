@@ -71,6 +71,9 @@ while True:
 
     elif int(option) == 3:
         # Print out invitations for each dinner guest. 
+        print("Your guest invitations: ")
+        for guest in guest_list:
+            print(f"{guest}! you are invited to Joshua's dinner party. ")
 
     elif int(option == 4):
         # Exit the program.
